@@ -9,6 +9,12 @@ Home_UI Home;
 
 int main()
 {
+    Rectangle img_bot_position1 = {160, 310, (float)200, (float)225};
+    Rectangle img_bot_position2 = {870, 310, (float)220, (float)225};
+    Rectangle img_bot_border1 = {150, 310, (float)220, (float)245};
+    Rectangle img_bot_border2 = {870, 300, (float)220, (float)245};
+    Rectangle Mute_Button = {(float)(1100.0),(float)70.0,(float)45.0,(float)45.0};
+
     InitWindow(screenwidth, screenheight, "Call Break");
     Home.load();
     SetTargetFPS(100);
@@ -21,7 +27,12 @@ int main()
 
         ClearBackground(RED);
         Home.Background(); // Image call
-
+        Home.text_CallBreak();
+        Home.border_draw(img_bot_border1);
+        Home.border_draw(img_bot_border2);
+        Home.img_machines(img_bot_position1);
+        Home.img_human(img_bot_position2);
+        Home.Mute_button(Mute_Button);
         // Home.button_draw(100.0, 200.0);
         //  Home.button_draw(850.0, 200.0);
         // if (
@@ -33,7 +44,6 @@ int main()
         // {
         //     DrawRectangleRec(button1, GOLD);
         // }
-        Home.text_CallBreak();
 
         EndDrawing();
     }
